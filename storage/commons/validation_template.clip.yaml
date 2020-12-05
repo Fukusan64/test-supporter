@@ -1,0 +1,18 @@
+email:
+  text: |+
+    test@example.com
+  description: |+
+    適当なアドレス
+
+textarea:
+  text: |+
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+    testtesttesttest
+  description: |+
+    適当な文章

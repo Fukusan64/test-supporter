@@ -1,0 +1,16 @@
+<main>
+  <header>
+    <h1>ClipBordList</h1>
+    <p><%= path %></p>
+  </header>
+  <section>
+    <% Object.keys(data).forEach(key => { %>
+      <aside style="width: 100%;">
+        <button data-text="<%= data[key].text %>"><%= key %></button>
+        <p><%= data[key].description %></p>
+        <i><%= data[key].text %></i>
+      </aside>
+    <% }) %>
+  </section>
+</main>
+<script src="/clipBord.js"></script>

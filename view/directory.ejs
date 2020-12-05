@@ -1,0 +1,19 @@
+<main>
+  <section>
+    <header>
+      <h1><%= name %></h1>
+      <p><%= path %></p>
+    </header>
+    <aside style="width: 100%;">
+      <a href="<%= pearent %>">..</a>
+      <p>pearent direcyory</p>
+    </aside>
+      <% for (let i = 0; i < children.length; i++) { %>
+      <% const target = children[i]; %>
+        <aside style="width:100%">
+          <a href="<%= url %>/<%= target.name %>"><%= target.name %></a>
+          <p><%= target.path %></p>
+        </aside>
+      <% } %>
+  </section>
+  </main>
