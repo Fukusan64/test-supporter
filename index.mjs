@@ -1,11 +1,13 @@
-import Koa        from 'koa';
-import accesslog  from 'koa-accesslog';
-import Router     from '@koa/router';
-import bodyParser from 'koa-bodyparser';
-import koaStatic  from 'koa-static';
-import render     from 'koa-ejs';
-import path       from 'path';
-import Storage    from './Controllers/Storage.mjs';
+import Koa             from 'koa';
+import accesslog       from 'koa-accesslog';
+import Router          from '@koa/router';
+import bodyParser      from 'koa-bodyparser';
+import koaStatic       from 'koa-static';
+import render          from 'koa-ejs';
+import path            from 'path';
+import ip              from 'ip';
+import Storage         from './Controllers/Storage.mjs';
+import qrCodeGenerater from './qrCodeGenerater.mjs';
 
 const targetPort = process.argv[2] ?? 3000;
 
@@ -44,3 +46,4 @@ router
 app.use(router.routes());
 app.listen(targetPort);
 
+qrCodeGenerater(`http://${ip.address()}:${targetPort}`);

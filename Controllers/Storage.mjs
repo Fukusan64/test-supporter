@@ -45,7 +45,7 @@ export default class Storage {
         });
       } else if (/\.clip\.yaml$/.test(name)) {
         const data = yamlParser((await fs.promises.readFile(path)).toString());
-        await ctx.render('clip-yaml', {name, path, data });
+        await ctx.render('clip-yaml', {name, path, data, pearent: p.dirname(ctx.path) });
       } else if(/\.(txt|html|js|mjs|css)$/.test(name)) {
         ctx.response.set('content-type', 'txt');
         ctx.body = fs.createReadStream(path);

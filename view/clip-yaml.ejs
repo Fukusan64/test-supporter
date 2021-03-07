@@ -4,6 +4,7 @@
     <p><%= path %></p>
   </header>
   <section>
+    <a href="<%= pearent %>">parentDir</a>
     <% Object.keys(data).forEach(key => { %>
       <aside style="width: 100%;">
         <button data-text="<%= data[key].text %>"><%= key %></button>
